@@ -76,7 +76,10 @@ dockers:
       goos: linux
       goarch: amd64
       image_templates:
+        - "ghcr.io/sikalabs/dogsay:{{ .Tag }}"
+        - "ghcr.io/sikalabs/dogsay:stable"
         - "sikalabs/dogsay:{{ .Tag }}"
+        - "sikalabs/dogsay:stable"
       dockerfile: Dockerfile.goreleaser
       ids:
         - dogsay
@@ -95,7 +98,10 @@ dockers:
     - goos: linux
       goarch: arm64
       image_templates:
+        - "ghcr.io/sikalabs/dogsay:{{ .Tag }}-arm64v8"
+        - "ghcr.io/sikalabs/dogsay:stable-arm64v8"
         - "sikalabs/dogsay:{{ .Tag }}-arm64v8"
+        - "sikalabs/dogsay:stable-arm64v8"
       dockerfile: Dockerfile.goreleaser.arm64v8
       ids:
         - dogsay
